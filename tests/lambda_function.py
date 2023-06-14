@@ -6,7 +6,7 @@ def lambda_handler(event, context,client=client):
     Key={
         'Id': {
             'S': 'cnt',
-        },
+        }, 
     },
     TableName=table_name,
 )

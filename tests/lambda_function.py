@@ -8,7 +8,7 @@ def lambda_handler(event, context,client=client):
             'S': 'cnt',
         }, 
     },
-    TableName=table_name,
+    TableName=table_name, 
 )
     views=int(get_response['Item']['value']['N'])
     views=views+1

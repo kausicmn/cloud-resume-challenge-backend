@@ -1,6 +1,3 @@
-resource "aws_s3_bucket" "s3backend" {
-  bucket = "tf-state-backend-kausic"
-}
 resource "aws_dynamodb_table" "basic-dynamodb-table" {
   name           = "mycloudtable"
   billing_mode   = "PAY_PER_REQUEST"

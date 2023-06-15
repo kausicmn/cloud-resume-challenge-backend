@@ -20,6 +20,9 @@ resource "aws_dynamodb_table_item" "example" {
   "value": {"N": "0"}
 }
 ITEM
+lifecycle {
+    ignore_changes = all
+  }
 }
 data "aws_iam_policy_document" "assume_role" {
   statement {

@@ -107,6 +107,9 @@ resource "aws_lambda_permission" "apigw_lambda" {
   data "aws_acm_certificate" "issued" {
   domain   = var.certificate_issued_domain
 } 
+data "aws_route53_zone" "myzone" {
+  name         = var.domain_name
+}
 resource "aws_apigatewayv2_domain_name" "example" {
   domain_name = var.api-gateway-subdomain
 

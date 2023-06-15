@@ -104,6 +104,9 @@ resource "aws_lambda_permission" "apigw_lambda" {
   # More: http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-control-access-using-iam-policies-to-invoke-api.html
   source_arn = "${aws_apigatewayv2_api.example.execution_arn}/*/*"
 }
+  data "aws_acm_certificate" "issued" {
+  domain   = var.certificate_issued_domain
+} 
 resource "aws_apigatewayv2_domain_name" "example" {
   domain_name = var.api-gateway-subdomain
 

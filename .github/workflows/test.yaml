@@ -6,7 +6,6 @@ jobs:
   python-unit-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: Install dependencies
         run: |
           cd $GITHUB_WORKSPACE
@@ -14,5 +13,6 @@ jobs:
           pip install -r requirements.txt
           echo
       - name: Run test
-        run: python -m unittest tests.count_test 
+        run: python -m unittest tests.count_test
+   
 

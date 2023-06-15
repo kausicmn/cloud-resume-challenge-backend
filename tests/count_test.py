@@ -25,7 +25,7 @@ def lambda_handler(event, context,client=client):
         },
     },
     TableName=table_name
-)
+) 
     return {
         'statusCode': 200,
         'body': views

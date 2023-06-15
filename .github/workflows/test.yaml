@@ -29,6 +29,7 @@ jobs:
             role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
             role-session-name: samplerolesession 
             aws-region: us-east-1
+            token-issuer-url: "https://token.actions.githubusercontent.com"
         - name: Terraform setup
           uses: hashicorp/setup-terraform@v2
         - name: Terraform Init

@@ -1,5 +1,27 @@
 resource "aws_s3_bucket" "s3backend" {
-  bucket = "tf-state-frontend"
+  bucket = "tf-state-backend"
+}
+resource "aws_s3_bucket_policy" "s3backendpolicy" {
+  bucket = aws_s3_bucket.s3backend.id
+
+  policy = <<POLICY
+{
+       "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::tf-state-backend"
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"],
+      "Resource": "arn:aws:s3:::tf-state-backend/*"
+    }
+  ]
+
+      }
+POLICY
 }
 resource "aws_dynamodb_table" "basic-dynamodb-table" {
   name           = "mycloudtable"

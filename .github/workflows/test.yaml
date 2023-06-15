@@ -27,6 +27,7 @@ jobs:
           uses: aws-actions/configure-aws-credentials@master
           with:
             role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+            role-session-name: samplerolesession 
             aws-region: us-east-1
         - name: Terraform setup
           uses: hashicorp/setup-terraform@v2

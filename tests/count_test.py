@@ -28,7 +28,7 @@ def lambda_handler(event, context,client=client):
 ) 
     return {
         'statusCode': 200,
-        'body': views
+        'body': views 
     }
 class TestLambda(unittest.TestCase):
     @mock_dynamodb

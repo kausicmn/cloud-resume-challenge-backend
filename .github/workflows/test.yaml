@@ -1,7 +1,9 @@
 name: 'Backend testing'
 
 on: push
-
+permissions:
+  id-token: write
+  contents: read
 jobs:
   python-unit-test:
     runs-on: ubuntu-latest

@@ -17,7 +17,7 @@ jobs:
           echo
       - name: Run test
         run: | 
-          working-directory: tests
+          cd tests
           python count_test.py
   
   terraform-deployment:

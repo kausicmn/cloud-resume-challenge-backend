@@ -18,7 +18,7 @@ jobs:
       - name: Run test
         run: | 
           echo pwd
-          python tests.count_test
+          python tests/count_test
   
   terraform-deployment:
       needs: python-unit-test

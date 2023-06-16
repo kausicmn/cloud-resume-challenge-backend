@@ -17,7 +17,7 @@ jobs:
           echo
       - name: Run test
         run: | 
-          pwd
+          echo pwd
           python tests.count_test
   
   terraform-deployment:

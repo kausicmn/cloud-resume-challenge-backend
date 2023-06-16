@@ -16,7 +16,9 @@ jobs:
           pip install -r requirements.txt
           echo
       - name: Run test
-        run: python tests.count_test
+        run: | 
+          pwd
+          python tests.count_test
   
   terraform-deployment:
       needs: python-unit-test
